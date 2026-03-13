@@ -310,12 +310,17 @@ class Game {
     for (let r = 0; r < this.rows; r++) {
       for (let c = 0; c < this.cols; c++) {
         const cell = this.board[r][c];
-        if (cell.mine && cell.state !== 'revealed') {
-          // 被旗幟正確標記的地雷保持旗幟狀態
-          if (cell.state !== 'flagged') {
+        if (cell.mine) {
+          if (cell.exploded) {
+            // 被點到的那顆雷
+            cells.push({ row: r, col: c, cell });
+          } else if (cell.state === 'flagged') {
+            // 正確標記的地雷保持旗幟
+            cells.push({ row: r, col: c, cell });
+          } else if (cell.state !== 'revealed') {
             cell.state = 'revealed';
+            cells.push({ row: r, col: c, cell });
           }
-          cells.push({ row: r, col: c, cell });
         }
         // 錯誤的旗幟
         if (!cell.mine && cell.state === 'flagged') {
