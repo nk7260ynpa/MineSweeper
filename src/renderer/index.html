@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline';">
+  <title>踩地雷</title>
+  <link rel="stylesheet" href="../../node_modules/7.css/dist/7.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/led.css">
+  <link rel="stylesheet" href="styles/smiley.css">
+  <link rel="stylesheet" href="styles/board.css">
+</head>
+<body>
+  <div class="window" role="main">
+    <div class="title-bar">
+      <div class="title-bar-text">踩地雷</div>
+    </div>
+    <div class="window-body">
+      <!-- 上方狀態列 -->
+      <div class="status-bar">
+        <div id="mine-counter" class="led-counter"></div>
+        <button id="smiley" class="smiley-btn smiley-normal" aria-label="新遊戲"></button>
+        <div id="timer-counter" class="led-counter"></div>
+      </div>
+      <!-- 遊戲面板 -->
+      <div id="board" class="board"></div>
+    </div>
+  </div>
+
+  <script src="js/game.js"></script>
+  <script src="js/counter.js"></script>
+  <script src="js/timer.js"></script>
+  <script src="js/board.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
