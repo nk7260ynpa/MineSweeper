@@ -3,8 +3,8 @@
 .board {
   display: grid;
   gap: 1px;
-  background: #7b9db8;
-  border: 1px solid #8da0b4;
+  background: #6b8aa0;
+  border: 1px solid #7a8d9e;
   border-radius: 2px;
   padding: 1px;
 }
@@ -29,23 +29,23 @@
 .cell.hidden,
 .cell.flagged,
 .cell.question {
-  background: linear-gradient(180deg, #c8ddf0 0%, #a5bdd4 50%, #97b3cc 100%);
-  border: 1px solid #8aa1b8;
-  box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset,
+  background: linear-gradient(180deg, #b0c8dc 0%, #90aac0 50%, #84a0b8 100%);
+  border: 1px solid #7890a5;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.3) inset,
               0 -1px 0 rgba(0,0,0,0.08) inset;
 }
 
 /* 滑鼠懸停效果 */
 .cell.hidden:hover {
-  background: linear-gradient(180deg, #d8e8f5 0%, #b8d0e5 50%, #aac4dc 100%);
-  border-color: #7a94ad;
+  background: linear-gradient(180deg, #c0d4e5 0%, #a0bcd0 50%, #94b0c8 100%);
+  border-color: #6a8498;
 }
 
 /* 按下凹陷效果 */
 .cell.pressed {
-  background: #8faec4 !important;
-  border: 1px solid #7a94ad !important;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.15) inset !important;
+  background: #7d9ab0 !important;
+  border: 1px solid #6a8498 !important;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.18) inset !important;
 }
 
 /* 旗幟 */
@@ -58,7 +58,7 @@
 /* 問號 */
 .cell.question::after {
   content: '?';
-  color: #2a5080;
+  color: #1e4060;
   font-size: 17px;
   font-weight: bold;
   line-height: 28px;
@@ -66,14 +66,14 @@
 
 /* 已揭露格子 - Win7 平面淡色 */
 .cell.revealed {
-  background: #d4e0ec;
-  border: 1px solid #b8c8d8;
+  background: #c0ceda;
+  border: 1px solid #a5b5c5;
   box-shadow: 0 1px 1px rgba(0,0,0,0.06) inset;
   font-size: 16px;
   line-height: 28px;
 }
 
-/* 數字顏色（Win7 配色，比經典版更鮮豔） */
+/* 數字顏色（Win7 配色） */
 .cell.n1 { color: #2555cf; }
 .cell.n2 { color: #2a8a2a; }
 .cell.n3 { color: #d42525; }
@@ -85,8 +85,8 @@
 
 /* 地雷 */
 .cell.mine {
-  background: #d4e0ec;
-  border: 1px solid #b8c8d8;
+  background: #c0ceda;
+  border: 1px solid #a5b5c5;
 }
 
 .cell.mine::after {
@@ -97,8 +97,8 @@
 
 /* 爆炸的地雷 */
 .cell.mine-exploded {
-  background: linear-gradient(180deg, #ff5050 0%, #cc2020 100%);
-  border: 1px solid #aa1010;
+  background: linear-gradient(180deg, #e84040 0%, #b81818 100%);
+  border: 1px solid #900e0e;
 }
 
 .cell.mine-exploded::after {
@@ -109,8 +109,8 @@
 
 /* 錯誤的旗幟 */
 .cell.mine-wrong {
-  background: #d4e0ec;
-  border: 1px solid #b8c8d8;
+  background: #c0ceda;
+  border: 1px solid #a5b5c5;
 }
 
 .cell.mine-wrong::after {
