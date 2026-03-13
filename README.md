@@ -48,6 +48,10 @@ npm run dist
 ### 執行測試
 
 ```bash
+# 在 Docker 容器內執行（建議）
+./test.sh
+
+# 本機直接執行
 npm test
 ```
 
