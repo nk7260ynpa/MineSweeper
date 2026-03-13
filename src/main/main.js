@@ -18,7 +18,7 @@ const PADDING_X = 23;
 const PADDING_Y = 87;
 
 let mainWindow = null;
-let currentDifficulty = 'beginner';
+let currentDifficulty = 'expert';
 let customConfig = null;
 let markEnabled = true;
 
