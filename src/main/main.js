@@ -33,6 +33,7 @@ function createWindow() {
   mainWindow = new BrowserWindow({
     width,
     height,
+    useContentSize: true,
     resizable: false,
     maximizable: false,
     fullscreenable: false,
@@ -45,6 +46,11 @@ function createWindow() {
   });
 
   mainWindow.loadFile(path.join(__dirname, '..', 'renderer', 'index.html'));
+
+  // 開發模式下開啟 DevTools
+  if (process.argv.includes('--dev')) {
+    mainWindow.webContents.openDevTools();
+  }
 
   createMenu(mainWindow, {
     onNewGame: () => mainWindow.webContents.send('new-game'),

@@ -2,106 +2,113 @@
 
 .board {
   display: grid;
-  border: 3px inset #808080;
-  background: #c0c0c0;
   gap: 0;
+  background: #c0c0c0;
+  border-top: 3px solid #808080;
+  border-left: 3px solid #808080;
+  border-right: 3px solid #fff;
+  border-bottom: 3px solid #fff;
 }
 
 /* 格子基本樣式 */
 .cell {
   width: 20px;
   height: 20px;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: bold;
   text-align: center;
-  line-height: 20px;
+  line-height: 16px;
   cursor: default;
-  border: none;
   position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 /* 未揭露格子 - 3D 凸起效果 */
 .cell.hidden,
 .cell.flagged,
 .cell.question {
-  border: 2px outset #fff;
   background: #c0c0c0;
-  border-color: #fff #808080 #808080 #fff;
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  border-right: 2px solid #808080;
+  border-bottom: 2px solid #808080;
 }
 
 /* 按下凹陷效果 */
-.cell.pressed,
-.cell.hidden.pressed {
-  border: 1px solid #808080;
+.cell.pressed {
+  border: 1px solid #c0c0c0 !important;
   background: #c0c0c0;
-  border-color: #808080;
 }
 
 /* 旗幟 */
 .cell.flagged::after {
   content: '🚩';
-  font-size: 12px;
+  font-size: 11px;
+  line-height: 16px;
 }
 
 /* 問號 */
 .cell.question::after {
   content: '?';
   color: #000;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: bold;
+  line-height: 16px;
 }
 
-/* 已揭露格子 - 平面凹陷效果 */
+/* 已揭露格子 */
 .cell.revealed {
   border: 1px solid #808080;
   background: #c0c0c0;
-  border-color: #808080;
+  line-height: 18px;
+  font-size: 13px;
 }
 
 /* 數字顏色（Windows 經典配色） */
-.cell.n1 { color: #0000ff; }  /* 藍色 */
-.cell.n2 { color: #008000; }  /* 綠色 */
-.cell.n3 { color: #ff0000; }  /* 紅色 */
-.cell.n4 { color: #000080; }  /* 深藍 */
-.cell.n5 { color: #800000; }  /* 暗紅 */
-.cell.n6 { color: #008080; }  /* 青色 */
-.cell.n7 { color: #000000; }  /* 黑色 */
-.cell.n8 { color: #808080; }  /* 灰色 */
+.cell.n1 { color: #0000ff; }
+.cell.n2 { color: #008000; }
+.cell.n3 { color: #ff0000; }
+.cell.n4 { color: #000080; }
+.cell.n5 { color: #800000; }
+.cell.n6 { color: #008080; }
+.cell.n7 { color: #000000; }
+.cell.n8 { color: #808080; }
 
 /* 地雷 */
 .cell.mine {
   border: 1px solid #808080;
   background: #c0c0c0;
-  border-color: #808080;
 }
 
 .cell.mine::after {
   content: '💣';
-  font-size: 12px;
+  font-size: 11px;
+  line-height: 18px;
 }
 
-/* 爆炸的地雷（被點中的那顆） */
+/* 爆炸的地雷 */
 .cell.mine-exploded {
   border: 1px solid #808080;
   background: #ff0000;
-  border-color: #808080;
 }
 
 .cell.mine-exploded::after {
   content: '💣';
-  font-size: 12px;
+  font-size: 11px;
+  line-height: 18px;
 }
 
 /* 錯誤的旗幟 */
 .cell.mine-wrong {
   border: 1px solid #808080;
   background: #c0c0c0;
-  border-color: #808080;
 }
 
 .cell.mine-wrong::after {
   content: '💣';
-  font-size: 12px;
+  font-size: 11px;
+  line-height: 18px;
 }
 
 .cell.mine-wrong::before {
@@ -112,7 +119,8 @@
   width: 100%;
   height: 100%;
   color: #ff0000;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 18px;
+  text-align: center;
   z-index: 1;
 }
