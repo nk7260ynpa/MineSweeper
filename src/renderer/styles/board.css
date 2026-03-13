@@ -1,114 +1,122 @@
-/* 遊戲面板與格子樣式 */
+/* Windows 7 踩地雷 - 遊戲面板與格子樣式 */
 
 .board {
   display: grid;
-  gap: 0;
-  background: #c0c0c0;
-  border-top: 3px solid #808080;
-  border-left: 3px solid #808080;
-  border-right: 3px solid #fff;
-  border-bottom: 3px solid #fff;
+  gap: 1px;
+  background: #7b9db8;
+  border: 1px solid #8da0b4;
+  border-radius: 2px;
+  padding: 1px;
 }
 
 /* 格子基本樣式 */
 .cell {
-  width: 20px;
-  height: 20px;
-  font-size: 12px;
+  width: 28px;
+  height: 28px;
+  font-size: 15px;
   font-weight: bold;
   text-align: center;
-  line-height: 16px;
+  line-height: 28px;
   cursor: default;
   position: relative;
   overflow: hidden;
   box-sizing: border-box;
+  border-radius: 1px;
+  transition: background 0.05s;
 }
 
-/* 未揭露格子 - 3D 凸起效果 */
+/* 未揭露格子 - Win7 漸層凸起效果 */
 .cell.hidden,
 .cell.flagged,
 .cell.question {
-  background: #c0c0c0;
-  border-top: 2px solid #fff;
-  border-left: 2px solid #fff;
-  border-right: 2px solid #808080;
-  border-bottom: 2px solid #808080;
+  background: linear-gradient(180deg, #c8ddf0 0%, #a5bdd4 50%, #97b3cc 100%);
+  border: 1px solid #8aa1b8;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset,
+              0 -1px 0 rgba(0,0,0,0.08) inset;
+}
+
+/* 滑鼠懸停效果 */
+.cell.hidden:hover {
+  background: linear-gradient(180deg, #d8e8f5 0%, #b8d0e5 50%, #aac4dc 100%);
+  border-color: #7a94ad;
 }
 
 /* 按下凹陷效果 */
 .cell.pressed {
-  border: 1px solid #c0c0c0 !important;
-  background: #c0c0c0;
+  background: #8faec4 !important;
+  border: 1px solid #7a94ad !important;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.15) inset !important;
 }
 
 /* 旗幟 */
 .cell.flagged::after {
   content: '🚩';
-  font-size: 11px;
-  line-height: 16px;
+  font-size: 15px;
+  line-height: 28px;
 }
 
 /* 問號 */
 .cell.question::after {
   content: '?';
-  color: #000;
-  font-size: 13px;
+  color: #2a5080;
+  font-size: 17px;
   font-weight: bold;
-  line-height: 16px;
+  line-height: 28px;
 }
 
-/* 已揭露格子 */
+/* 已揭露格子 - Win7 平面淡色 */
 .cell.revealed {
-  border: 1px solid #808080;
-  background: #c0c0c0;
-  line-height: 18px;
-  font-size: 13px;
+  background: #d4e0ec;
+  border: 1px solid #b8c8d8;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.06) inset;
+  font-size: 16px;
+  line-height: 28px;
 }
 
-/* 數字顏色（Windows 經典配色） */
-.cell.n1 { color: #0000ff; }
-.cell.n2 { color: #008000; }
-.cell.n3 { color: #ff0000; }
-.cell.n4 { color: #000080; }
-.cell.n5 { color: #800000; }
-.cell.n6 { color: #008080; }
-.cell.n7 { color: #000000; }
-.cell.n8 { color: #808080; }
+/* 數字顏色（Win7 配色，比經典版更鮮豔） */
+.cell.n1 { color: #2555cf; }
+.cell.n2 { color: #2a8a2a; }
+.cell.n3 { color: #d42525; }
+.cell.n4 { color: #1e1ea0; }
+.cell.n5 { color: #8b1a1a; }
+.cell.n6 { color: #1a8b8b; }
+.cell.n7 { color: #2d2d2d; }
+.cell.n8 { color: #6e6e6e; }
 
 /* 地雷 */
 .cell.mine {
-  border: 1px solid #808080;
-  background: #c0c0c0;
+  background: #d4e0ec;
+  border: 1px solid #b8c8d8;
 }
 
 .cell.mine::after {
   content: '💣';
-  font-size: 11px;
-  line-height: 18px;
+  font-size: 15px;
+  line-height: 28px;
 }
 
 /* 爆炸的地雷 */
 .cell.mine-exploded {
-  border: 1px solid #808080;
-  background: #ff0000;
+  background: linear-gradient(180deg, #ff5050 0%, #cc2020 100%);
+  border: 1px solid #aa1010;
 }
 
 .cell.mine-exploded::after {
   content: '💣';
-  font-size: 11px;
-  line-height: 18px;
+  font-size: 15px;
+  line-height: 28px;
 }
 
 /* 錯誤的旗幟 */
 .cell.mine-wrong {
-  border: 1px solid #808080;
-  background: #c0c0c0;
+  background: #d4e0ec;
+  border: 1px solid #b8c8d8;
 }
 
 .cell.mine-wrong::after {
   content: '💣';
-  font-size: 11px;
-  line-height: 18px;
+  font-size: 14px;
+  line-height: 28px;
 }
 
 .cell.mine-wrong::before {
@@ -118,9 +126,9 @@
   left: 0;
   width: 100%;
   height: 100%;
-  color: #ff0000;
-  font-size: 16px;
-  line-height: 18px;
+  color: #cc2020;
+  font-size: 22px;
+  line-height: 28px;
   text-align: center;
   z-index: 1;
 }

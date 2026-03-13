@@ -33,8 +33,8 @@ class Board {
     this.game.markEnabled = markEnabled;
     this.cells = [];
     this.boardEl.innerHTML = '';
-    this.boardEl.style.gridTemplateColumns = `repeat(${config.cols}, 20px)`;
-    this.boardEl.style.gridTemplateRows = `repeat(${config.rows}, 20px)`;
+    this.boardEl.style.gridTemplateColumns = `repeat(${config.cols}, 28px)`;
+    this.boardEl.style.gridTemplateRows = `repeat(${config.rows}, 28px)`;
 
     for (let r = 0; r < config.rows; r++) {
       const row = [];

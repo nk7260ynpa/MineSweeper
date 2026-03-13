@@ -9,13 +9,13 @@ const DIFFICULTY = {
   expert:       { rows: 16, cols: 30, mines: 99 },
 };
 
-// 格子大小（像素）
-const CELL_SIZE = 20;
-// 面板外框額外空間（邊距 + 邊框 + 狀態列）
-// X: 6*2(容器padding) + 2*2(容器border) + 3*2(面板border) = 22
-// Y: 6*2(容器padding) + 2*2(容器border) + 6(gap) + 42(狀態列) + 3*2(面板border) = 70
-const PADDING_X = 22;
-const PADDING_Y = 70;
+// 格子大小（像素）— 28px 格子 + 1px gap
+const CELL_SIZE = 29;
+// 面板外框額外空間（邊距 + 邊框 + 狀態列 + gap）
+// X: 8*2(padding) + 1*2(容器border) + 1*2(面板border) + 2(面板padding) + 1(末列無gap補正) = 23
+// Y: 8*2(padding) + 1*2(容器border) + 8(gap) + 46+2(狀態列) + 1*2(面板border) + 2(面板padding) + 1 = 87
+const PADDING_X = 23;
+const PADDING_Y = 87;
 
 let mainWindow = null;
 let currentDifficulty = 'beginner';

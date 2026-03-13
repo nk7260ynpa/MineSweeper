@@ -1,4 +1,4 @@
-/* 全域樣式 - 覆蓋 7.css 衝突 */
+/* Windows 7 踩地雷 - 全域樣式 */
 
 * {
   margin: 0;
@@ -7,23 +7,21 @@
 }
 
 body {
-  background: #c0c0c0;
+  background: #f0f0f0;
   user-select: none;
   -webkit-user-select: none;
   overflow: hidden;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* 不使用 7.css 的 window 框架，直接自訂 */
 .game-container {
   display: inline-flex;
   flex-direction: column;
-  padding: 6px;
-  background: #c0c0c0;
-  border-top: 2px solid #fff;
-  border-left: 2px solid #fff;
-  border-right: 2px solid #808080;
-  border-bottom: 2px solid #808080;
+  padding: 8px;
+  background: linear-gradient(180deg, #eef5fc 0%, #dde8f0 100%);
+  border: 1px solid #8da0b4;
+  border-radius: 3px;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.6) inset;
 }
 
 /* 上方狀態列 */
@@ -31,12 +29,11 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 4px 6px;
-  margin-bottom: 6px;
-  background: #c0c0c0;
-  border-top: 2px solid #808080;
-  border-left: 2px solid #808080;
-  border-right: 2px solid #fff;
-  border-bottom: 2px solid #fff;
-  min-height: 42px;
+  padding: 5px 8px;
+  margin-bottom: 8px;
+  background: linear-gradient(180deg, #d4e4f7 0%, #b8cde0 100%);
+  border: 1px solid #8da0b4;
+  border-radius: 3px;
+  min-height: 46px;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.5) inset;
 }
