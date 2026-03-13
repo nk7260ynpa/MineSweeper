@@ -16,9 +16,7 @@ body {
 
 /* 不使用 7.css 的 window 框架，直接自訂 */
 .game-container {
-  width: 100%;
-  height: 100vh;
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   padding: 6px;
   background: #c0c0c0;

@@ -11,9 +11,11 @@ const DIFFICULTY = {
 
 // 格子大小（像素）
 const CELL_SIZE = 20;
-// 面板外框與標題列額外空間
-const PADDING_X = 40;
-const PADDING_Y = 120;
+// 面板外框額外空間（邊距 + 邊框 + 狀態列）
+// X: 6*2(容器padding) + 2*2(容器border) + 3*2(面板border) = 22
+// Y: 6*2(容器padding) + 2*2(容器border) + 6(gap) + 42(狀態列) + 3*2(面板border) = 70
+const PADDING_X = 22;
+const PADDING_Y = 70;
 
 let mainWindow = null;
 let currentDifficulty = 'beginner';

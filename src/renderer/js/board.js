@@ -110,9 +110,12 @@ class Board {
       this._showChordPreview(pos.row, pos.col);
       this._setSmiley('surprised');
     } else if (e.button === 0) {
-      // 左鍵：顯示凹陷
       const cell = this.game.board[pos.row][pos.col];
-      if (cell.state === 'hidden' || cell.state === 'question') {
+      if (cell.state === 'revealed' && cell.adjacentMines > 0) {
+        // 左鍵按住數字格：顯示 Chord 預覽
+        this._showChordPreview(pos.row, pos.col);
+        this._setSmiley('surprised');
+      } else if (cell.state === 'hidden' || cell.state === 'question') {
         pos.el.classList.add('pressed');
         this._setSmiley('surprised');
       }
@@ -133,7 +136,9 @@ class Board {
       this._showChordPreview(pos.row, pos.col);
     } else if (e.buttons === 1) {
       const cell = this.game.board[pos.row][pos.col];
-      if (cell.state === 'hidden' || cell.state === 'question') {
+      if (cell.state === 'revealed' && cell.adjacentMines > 0) {
+        this._showChordPreview(pos.row, pos.col);
+      } else if (cell.state === 'hidden' || cell.state === 'question') {
         pos.el.classList.add('pressed');
       }
     }
@@ -180,10 +185,19 @@ class Board {
     }
   }
 
-  /** 處理左鍵揭露 */
+  /** 處理左鍵揭露（含自動 Chord） */
   _handleReveal(r, c) {
     if (!this.game.started) {
       this.timer.start();
+    }
+
+    const cell = this.game.board[r][c];
+
+    // 已揭露的數字格：自動觸發 Chord Click
+    if (cell.state === 'revealed' && cell.adjacentMines > 0) {
+      const result = this.game.chord(r, c);
+      this._applyResult(result);
+      return;
     }
 
     const result = this.game.reveal(r, c);
