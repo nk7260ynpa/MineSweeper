@@ -1,6 +1,6 @@
-# 踩地雷 MineSweeper
+# MineSweeper
 
-Windows 7 風格踩地雷桌面應用程式，使用 Electron + 7.css 建立，可在 macOS 上安裝執行。
+Windows 7 風格 MineSweeper 桌面應用程式，使用 Electron + 7.css 建立，可在 macOS 上安裝執行。
 
 ## 功能特色
 

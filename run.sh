@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# 啟動踩地雷應用程式
+# 啟動 MineSweeper 應用程式
 # 自動安裝依賴並啟動 Electron 應用
 
 set -euo pipefail
@@ -22,5 +22,5 @@ if [[ ! -d "node_modules" ]]; then
 fi
 
 # 啟動應用
-echo "正在啟動踩地雷..."
+echo "正在啟動 MineSweeper..."
 npm start

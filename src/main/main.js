@@ -39,7 +39,7 @@ function createWindow() {
     resizable: false,
     maximizable: false,
     fullscreenable: false,
-    title: '踩地雷',
+    title: 'MineSweeper',
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       contextIsolation: true,

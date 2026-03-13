@@ -64,13 +64,13 @@ function createMenu(window, handlers) {
       label: '說明',
       submenu: [
         {
-          label: '關於踩地雷',
+          label: '關於 MineSweeper',
           click: () => {
             dialog.showMessageBox(window, {
               type: 'info',
-              title: '關於踩地雷',
-              message: '踩地雷 v1.0.0',
-              detail: 'Windows 7 風格踩地雷\n使用 Electron + 7.css 建立',
+              title: '關於 MineSweeper',
+              message: 'MineSweeper v1.0.0',
+              detail: 'Windows 7 風格 MineSweeper\n使用 Electron + 7.css 建立',
             });
           },
         },

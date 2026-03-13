@@ -1,5 +1,5 @@
 /**
- * 踩地雷核心邏輯
+ * MineSweeper 核心邏輯
  *
  * 狀態定義：
  * - state: 'hidden' | 'revealed' | 'flagged' | 'question'

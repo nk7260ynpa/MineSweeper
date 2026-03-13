@@ -1,7 +1,7 @@
 {
   "name": "minesweeper",
   "version": "1.0.0",
-  "description": "Windows 7 風格踩地雷桌面應用程式",
+  "description": "Windows 7 風格 MineSweeper 桌面應用程式",
   "main": "src/main/main.js",
   "scripts": {
     "start": "electron .",
@@ -10,7 +10,7 @@
   },
   "build": {
     "appId": "com.minesweeper.app",
-    "productName": "踩地雷",
+    "productName": "MineSweeper",
     "mac": {
       "target": [
         {

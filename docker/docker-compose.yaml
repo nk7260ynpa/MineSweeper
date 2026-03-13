@@ -1,4 +1,4 @@
-# 踩地雷 - CI 測試用
+# MineSweeper - CI 測試用
 # Electron GUI 應用不適合在容器中執行，此設定僅供執行單元測試
 services:
   test:
