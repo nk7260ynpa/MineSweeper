@@ -1,0 +1,36 @@
+/* 笑臉按鈕樣式 */
+
+.smiley-btn {
+  width: 30px;
+  height: 30px;
+  border: 2px outset #fff;
+  background: #c0c0c0;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 26px;
+  text-align: center;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.smiley-btn:active,
+.smiley-btn.pressed {
+  border-style: inset;
+}
+
+/* 笑臉狀態 - 使用 emoji */
+.smiley-normal::after {
+  content: '🙂';
+}
+
+.smiley-surprised::after {
+  content: '😮';
+}
+
+.smiley-win::after {
+  content: '😎';
+}
+
+.smiley-dead::after {
+  content: '💀';
+}
