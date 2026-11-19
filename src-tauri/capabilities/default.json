@@ -1,0 +1,7 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "主視窗權限：接收後端事件、呼叫 App 指令",
+  "windows": ["main"],
+  "permissions": ["core:default"]
+}

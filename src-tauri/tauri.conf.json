@@ -1,0 +1,51 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "MineSweeper",
+  "version": "2.0.0",
+  "identifier": "com.minesweeper.app",
+  "build": {
+    "beforeDevCommand": {
+      "script": "trunk serve",
+      "cwd": "../frontend",
+      "wait": false
+    },
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": {
+      "script": "trunk build --release",
+      "cwd": "../frontend"
+    },
+    "frontendDist": "../frontend/dist"
+  },
+  "app": {
+    "withGlobalTauri": true,
+    "windows": [
+      {
+        "label": "main",
+        "title": "MineSweeper",
+        "width": 893,
+        "height": 551,
+        "resizable": false,
+        "maximizable": false,
+        "fullscreen": false,
+        "center": true
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; connect-src 'self' ipc: http://ipc.localhost",
+      "devCsp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["app", "dmg"],
+    "category": "PuzzleGame",
+    "shortDescription": "Windows 7 風格 MineSweeper",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ]
+  }
+}

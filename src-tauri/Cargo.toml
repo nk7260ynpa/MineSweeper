@@ -1,0 +1,20 @@
+[package]
+name = "minesweeper"
+description = "Windows 7 風格 MineSweeper 桌面應用程式（Tauri 後端）"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[lib]
+name = "minesweeper_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+minesweeper-core.workspace = true
+serde.workspace = true
+tauri = { version = "2", features = [] }
+tauri-plugin-log = "2"
+log = "0.4"
