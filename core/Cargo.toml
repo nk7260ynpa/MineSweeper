@@ -1,0 +1,9 @@
+[package]
+name = "minesweeper-core"
+description = "MineSweeper 核心遊戲邏輯（地雷配置、BFS 展開、勝負判定）"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+serde.workspace = true
