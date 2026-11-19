@@ -1,10 +1,11 @@
-# MineSweeper - CI 測試用
-# Electron GUI 應用不適合在容器中執行，此設定僅供執行單元測試
+# MineSweeper - 單元測試用
+# Tauri GUI 應用需在 macOS 本機編譯執行，此設定僅供執行核心邏輯單元測試
 services:
   test:
     build:
       context: ..
       dockerfile: docker/Dockerfile
+    image: minesweeper-test
     volumes:
       - ../logs:/app/logs
-    command: npm test
+    command: cargo test --locked -p minesweeper-core

@@ -1,0 +1,6 @@
+target/
+frontend/dist/
+src-tauri/gen/
+logs/
+.git/
+node_modules/

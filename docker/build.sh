@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
 #
-# 建立 Docker image（CI 測試用）
-# Electron GUI 應用不適合在容器中執行，Docker 僅用於執行單元測試
+# 建立單元測試用 Docker image。
+# Tauri GUI 應用需在 macOS 本機編譯執行，Docker 僅用於執行核心邏輯單元測試。
 
 set -euo pipefail
 
-readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-readonly PROJECT_DIR="$(dirname "${SCRIPT_DIR}")"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+readonly SCRIPT_DIR
+PROJECT_DIR="$(dirname "${SCRIPT_DIR}")"
+readonly PROJECT_DIR
 
 cd "${PROJECT_DIR}"
 

@@ -1,6 +1,9 @@
+target/
+frontend/dist/
+src-tauri/gen/
 node_modules/
-dist/
 logs/*.log
+*.log
 CLAUDE.md
 .DS_Store
 *.swp
